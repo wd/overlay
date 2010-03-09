@@ -1,0 +1,21 @@
+diff -ru gemanx-org/src/core/termview.cpp gemanx/src/core/termview.cpp
+--- gemanx-org/src/core/termview.cpp	2009-06-30 16:19:56.225697310 +0800
++++ gemanx/src/core/termview.cpp	2009-06-30 16:24:25.446173778 +0800
+@@ -555,7 +555,7 @@
+ 			}
+ 		}
+ 		// 2004.08.07 Added by PCMan: Draw the underline of hyperlinks.
+-		if( pAttr[i].IsHyperLink() ) 
++/*		if( pAttr[i].IsHyperLink() ) 
+ 		{
+ //			dc.SetPen(wxPen(m_HyperLinkColor, 1, wxSOLID));
+ //			int bottom = top + m_CharH - 1;
+@@ -566,7 +566,7 @@
+ 			int y = top + m_CharH - 1;
+ 			gdk_draw_line( dc, m_GC, left, y, left + bgw - 1, y );
+ 		}
+-
++*/
+ 		// two cells have the same attributes
+ 		if( i == 0 && pAttr[0].IsSameAttr( pAttr[1].AsShort() ) && bSel[0] == bSel[1] )
+ 			break;

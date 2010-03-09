@@ -1,0 +1,32 @@
+diff -urN gemanx-org/src/mainframe.cpp gemanx/src/mainframe.cpp
+--- gemanx-org/src/mainframe.cpp	2010-01-10 11:36:07.698015879 +0800
++++ gemanx/src/mainframe.cpp	2010-01-10 12:30:03.173298457 +0800
+@@ -1343,6 +1343,15 @@
+                               GdkEvent* evt UNUSED,
+                               CMainFrame* _this )
+ {
++
++    int count = _this->GetNotebook()->GetPageCount();
++    printf("Onclose: %d\n", count);
++
++    if( AppConfig.ShowTrayIcon ){
++        _this->Hide();
++        return true;
++    }
++
+ 	return !_this->CanClose();
+ }
+ 
+@@ -1383,7 +1392,10 @@
+ 
+ bool CMainFrame::CanClose()
+ {
+-	if( GetNotebook()->GetPageCount() == 0 || !AppConfig.QueryOnExit )
++    int count = GetNotebook()->GetPageCount();
++    printf("Canclose: %d\n", count);
++
++	if( count == 0 || !AppConfig.QueryOnExit )
+ 		return true;
+ 
+ 	GtkWidget* dlg = gtk_message_dialog_new( (GtkWindow*)m_Widget,
+Files gemanx-org/src/.mainframe.cpp.swp and gemanx/src/.mainframe.cpp.swp differ
