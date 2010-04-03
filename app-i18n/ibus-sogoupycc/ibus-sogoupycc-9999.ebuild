@@ -16,7 +16,7 @@ SLOT="0"
 IUSE=""
 KEYWORDS="~x86"
 
-RDEPEND=">=app-i18n/ibus-1.2.0
+RDEPEND=">=app-i18n/ibus-1.3.0
         >=dev-lang/lua-5.1
         dev-libs/luasocket
         dev-db/sqlite:3
