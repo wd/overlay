@@ -17,6 +17,7 @@ IUSE=""
 
 RDEPEND="dev-perl/Template-Toolkit"
 DEPEND="${RDEPEND}
-	virtual/perl-Module-Build"
+	virtual/perl-Module-Build
+	dev-perl/File-Find-Rule"
 
 SRC_TEST="do"
