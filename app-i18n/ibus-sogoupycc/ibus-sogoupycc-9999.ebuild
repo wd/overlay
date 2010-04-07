@@ -23,7 +23,8 @@ RDEPEND=">=app-i18n/ibus-1.3.0
         x11-libs/gtk+:2
         x11-libs/libnotify"
 
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+		dev-util/cmake"
 
 ESVN_BOOTSTRAP='linux/build.sh'
 
