@@ -19,7 +19,7 @@ KEYWORDS="~x86"
 RDEPEND=">=x11-libs/gtk+-2.4
 	x11-libs/libXft
 	dev-util/intltool
-	firefox? ( www-client/mozilla-firefox )
+	firefox? ( www-client/firefox )
 	libnotify? ( x11-libs/libnotify )"
 
 DEPEND="${RDEPEND}"
