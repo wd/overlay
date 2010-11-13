@@ -48,10 +48,12 @@ src_install() {
 
 pkg_postinst() {
 	echo
-	elog "You should export the following variables to use fcitx"
+	elog "You should export the following variables in ~/.bashrc"
+	elog " or ~/.xprofile to use fcitx"
+	elog
 	elog " export XMODIFIERS=\"@im=fcitx\""
-	elog " export XIM=fcitx"
-	elog " export XIM_PROGRAM=fcitx"
+	elog " export QT_IM_MODULE=xim";
+	elog " export GTK_IM_MODULE=xim";
 	elog
 	elog "Check /usr/share/fcitx/doc directory for documents."
 }
