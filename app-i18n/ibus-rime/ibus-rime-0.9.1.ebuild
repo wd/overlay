@@ -5,7 +5,7 @@
 EAPI="2"
 #inherit make-utils eutils
 
-DESCRIPTION="Rime Input Method Engine library"
+DESCRIPTION="Rime Input Method Engine"
 HOMEPAGE="http://code.google.com/p/rimeime/"
 SRC_URI="http://rimeime.googlecode.com/files/${P}.tar.gz"
 
