@@ -4,10 +4,12 @@
 
 EAPI="2"
 #inherit make-utils eutils
+inherit eutils
 
 DESCRIPTION="Rime Input Method Engine library"
 HOMEPAGE="http://code.google.com/p/rimeime/"
 SRC_URI="http://rimeime.googlecode.com/files/${P}.tar.gz"
+EPATCH_SOURCE="${FILESDIR}/page_size.patch"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -25,6 +27,11 @@ DEPEND="${RDEPEND}
 	dev-util/cmake"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cd "${S}/librime"
+	epatch ${FILESDIR}/page_size.patch || die 'patch failed'
+}
 
 src_compile() {
 	cd "${S}/librime"

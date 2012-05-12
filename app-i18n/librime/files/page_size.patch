@@ -1,0 +1,12 @@
+diff -urN librime.org/src/schema.cc librime/src/schema.cc
+--- librime.org/src/schema.cc	2012-05-06 18:49:56.000000000 +0800
++++ librime/src/schema.cc	2012-05-13 01:16:55.686866692 +0800
+@@ -29,7 +29,7 @@
+ }
+ 
+ int Schema::page_size() const {
+-  int page_size = 5;  // default
++  int page_size = 9;  // default
+   if (config_) {
+     config_->GetInt("menu/page_size", &page_size);
+   }
