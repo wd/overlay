@@ -6,11 +6,12 @@ EAPI=5
 
 DESCRIPTION="A fcitx module by SoGou Inc."
 HOMEPAGE="http://pinyin.sogou.com/"
-SRC_URI="${PN}_${PV}-2_amd64.deb"
+SRC_URI="x86? ( ${PN}_${PV}-2_i386.deb )
+         amd64? ( ${PN}_${PV}-2_amd64.deb )"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="app-i18n/fcitx"
@@ -32,8 +33,8 @@ src_unpack() {
 }
 
 src_prepare() {
-	  mv usr/lib/x86_64-linux-gnu/fcitx/ usr/lib/
-	  rm -r usr/lib/x86_64-linux-gnu/
+	  use amd64 && mv usr/lib/x86_64-linux-gnu/fcitx/ usr/lib/ && rm -r usr/lib/x86_64-linux-gnu/
+	  use x86 && mv usr/lib/i386-linux-gnu/fcitx/ usr/lib/ && rm -r usr/lib/i386-linux-gnu/
 }
 
 src_install() {
