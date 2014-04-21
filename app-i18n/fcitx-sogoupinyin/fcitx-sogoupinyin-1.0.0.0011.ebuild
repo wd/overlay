@@ -42,6 +42,7 @@ src_install(){
 	doins ${S}/usr/lib/*-linux-gnu/fcitx/*
 
 	insinto /usr/share
+	insopts -m0644
 	doins -r ${S}/usr/share/sogoupinyin
 	doins -r ${S}/usr/share/fcitx
 	doins -r ${S}/usr/share/icons
@@ -64,5 +65,17 @@ pkg_postinst(){
 	einfo "choice box, you may need to remove your configure file of"
 	einfo "fcitx-cloudpinyin, which locate in ~/.config/fcitx/addon and"
 	einfo "~/.config/fcitx/conf."
+	einfo
+	einfo "Add # before DelayStart settings at ~/.config/fcitx/config, "
+	einfo "and add configure at ~/.xprofile bellow:"
+	einfo
+	einfo 'export XMODIFIERS="@im=fcitx"'
+	einfo 'export XIM=fcitx'
+	einfo 'export XIM_PROGRAM=fcitx'
+	einfo 'export GTK_IM_MODULE="fcitx"'
+	einfo 'export QT_IM_MODULE="fcitx"'
+	einfo
+	einfo 'fcitx'
+	einfo 'fcitx-qimpanel'
 	einfo
 }
